@@ -2,6 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { User } from './users.entity';
+// import { JsonList } from 'src/json-list/entities/json-list.entity';
 
 @Injectable()
 export class UsersService {
@@ -31,7 +32,12 @@ export class UsersService {
     if (isOldUser) {
       return null;
     }
-    const result = await this.usersRepository.save({ username, password });
+
+    const result = await this.usersRepository.save({
+      username,
+      password,
+      jsonContents: [],
+    });
     return result;
   }
 }

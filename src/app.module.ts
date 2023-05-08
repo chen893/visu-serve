@@ -5,6 +5,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from './auth/auth.module';
 import { UsersModule } from './users/users.module';
 import { User } from './users/users.entity';
+// import { JsonList } from './users/json-list.entity';
+import { JsonContent } from './json-list/entities/json-content.entity';
+import { JsonListModule } from './json-list/json-list.module';
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -14,11 +17,12 @@ import { User } from './users/users.entity';
       username: 'root',
       password: 'csl139',
       database: 'visu_serve',
-      entities: [User],
+      entities: [User, JsonContent],
       synchronize: true,
     }),
     AuthModule,
     UsersModule,
+    JsonListModule,
   ],
   controllers: [AppController],
   providers: [AppService],

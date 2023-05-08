@@ -1,6 +1,18 @@
 // user.entity.ts
-import { Entity, PrimaryGeneratedColumn, Column, Unique } from 'typeorm';
+import {
+  Entity,
+  PrimaryGeneratedColumn,
+  Column,
+  Unique,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToOne,
+  JoinColumn,
+  OneToMany,
+} from 'typeorm';
 import * as bcrypt from 'bcrypt';
+// import { JsonList } from '../json-list/entities/json-list.entity';
+import { JsonContent } from 'src/json-list/entities/json-content.entity';
 
 @Entity('users')
 @Unique(['username'])
@@ -27,4 +39,18 @@ export class User {
     // console.log('this', this.password);
     // return hashedPassword === this.password;
   }
+
+  @CreateDateColumn()
+  createdAt: Date;
+
+  @UpdateDateColumn()
+  updatedAt: Date;
+
+  // @OneToOne(() => JsonList, (jsonList) => jsonList.user, { cascade: true })
+  // @JoinColumn()
+  // jsonList: JsonList;
+  @OneToMany(() => JsonContent, (jsonContent) => jsonContent.user, {
+    cascade: true,
+  })
+  jsonContents: JsonContent[];
 }

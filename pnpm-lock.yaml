@@ -5,6 +5,7 @@ specifiers:
   '@nestjs/common': ^9.3.12
   '@nestjs/core': ^9.3.12
   '@nestjs/jwt': ^10.0.3
+  '@nestjs/mapped-types': '*'
   '@nestjs/passport': ^9.0.3
   '@nestjs/platform-express': ^9.3.12
   '@nestjs/schematics': ^9.0.0
@@ -45,6 +46,7 @@ specifiers:
 dependencies:
   '@nestjs/core': registry.npmmirror.com/@nestjs/core/9.3.12_qhubmme3ystyvorrsy6sfc2ome
   '@nestjs/jwt': registry.npmmirror.com/@nestjs/jwt/10.0.3_@nestjs+common@9.3.12
+  '@nestjs/mapped-types': registry.npmmirror.com/@nestjs/mapped-types/1.2.2_5pvgaw2xy5j677zk7xp6almw2q
   '@nestjs/passport': registry.npmmirror.com/@nestjs/passport/9.0.3_ajy2slul3age3kopk444psnhqq
   '@nestjs/platform-express': registry.npmmirror.com/@nestjs/platform-express/9.3.12_ge4qplnzbmfyi5znl534zhtkn4
   '@nestjs/typeorm': registry.npmmirror.com/@nestjs/typeorm/9.0.1_tczrxjq6l4bicygw3hjjbo47ua
@@ -1358,6 +1360,28 @@ packages:
       '@nestjs/common': registry.npmmirror.com/@nestjs/common/9.3.12_welcnyot5bzd5wa2aovbkxpi4i
       '@types/jsonwebtoken': registry.npmmirror.com/@types/jsonwebtoken/9.0.1
       jsonwebtoken: registry.npmmirror.com/jsonwebtoken/9.0.0
+    dev: false
+
+  registry.npmmirror.com/@nestjs/mapped-types/1.2.2_5pvgaw2xy5j677zk7xp6almw2q:
+    resolution: {integrity: sha512-3dHxLXs3M0GPiriAcCFFJQHoDFUuzTD5w6JDhE7TyfT89YKpe6tcCCIqOZWdXmt9AZjjK30RkHRSFF+QEnWFQg==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@nestjs/mapped-types/-/mapped-types-1.2.2.tgz}
+    id: registry.npmmirror.com/@nestjs/mapped-types/1.2.2
+    name: '@nestjs/mapped-types'
+    version: 1.2.2
+    peerDependencies:
+      '@nestjs/common': ^7.0.8 || ^8.0.0 || ^9.0.0
+      class-transformer: ^0.2.0 || ^0.3.0 || ^0.4.0 || ^0.5.0
+      class-validator: ^0.11.1 || ^0.12.0 || ^0.13.0 || ^0.14.0
+      reflect-metadata: ^0.1.12
+    peerDependenciesMeta:
+      class-transformer:
+        optional: true
+      class-validator:
+        optional: true
+    dependencies:
+      '@nestjs/common': registry.npmmirror.com/@nestjs/common/9.3.12_welcnyot5bzd5wa2aovbkxpi4i
+      class-transformer: registry.npmmirror.com/class-transformer/0.5.1
+      class-validator: registry.npmmirror.com/class-validator/0.14.0
+      reflect-metadata: registry.npmmirror.com/reflect-metadata/0.1.13
     dev: false
 
   registry.npmmirror.com/@nestjs/passport/9.0.3_ajy2slul3age3kopk444psnhqq:
